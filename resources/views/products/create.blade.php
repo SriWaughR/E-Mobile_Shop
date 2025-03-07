@@ -29,7 +29,7 @@
                 @if($errors->has('name'))
                 <div class="invalid-feedback">{{$errors->first("name")}}</div>
                 @endif
-              </div>
+              </div> 
             </div>
 
             <div class="row mb-2">

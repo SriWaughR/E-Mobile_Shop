@@ -30,6 +30,7 @@ class MobileController extends Controller
         //dd($request);
 
         $request->validate([
+            // form names
             'name'=>'required',
             'model'=>'required',
             'quantity'=>'required|numeric',
@@ -44,6 +45,7 @@ class MobileController extends Controller
         $request->image->move(public_path('pictures'),$imageName);
 
         $mobile_curd = new Mobile_curd;
+        // database names           form names
         $mobile_curd->image= $imageName;
         $mobile_curd->name= $request->name;
         $mobile_curd->model= $request->model;
@@ -53,7 +55,9 @@ class MobileController extends Controller
         $mobile_curd->descreption= $request->des;
         $mobile_curd->offered_price= ($request->mrp - (($request->mrp*$request->dis)/100));
         $mobile_curd->save();
-        return back()->withSuccess('Product Detaills Inserted Successfully......');
+        // return back()->withSuccess('Product Detaills Inserted Successfully......');
+        // return back()->with('message','Product Detaills Inserted Successfully......');
+        return redirect()->back()->with('success', 'Data saved successfully!');
     }  
     
     public function update(Request $request,$id){

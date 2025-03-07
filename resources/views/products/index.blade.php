@@ -32,7 +32,7 @@
                   <img
                     src="pictures/{{$mobile_curd->image}}"
                     alt="{{$mobile_curd->name}}"
-                    style="width: 50px; height: 50px; object-fit: contain"
+                    style="width: 50px; height: 50px; object-fit: contain"  
                   />
                 </td>
                 <td>

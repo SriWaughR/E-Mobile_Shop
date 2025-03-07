@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\MobileController;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; 
 
 Route::get("/",[MobileController::class,'index'])->name('index');
 
